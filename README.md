@@ -1,68 +1,81 @@
-# Mutable Resume Portfolio
-Have you ever wanted to apply with a tailored resume, but found the process of editing, updating, and managing different resumes, frusterating?
+# tutorial
+TODO: post link here
 
-Most resume generators focus on making one good resume. Anything more than that usually costs money in the form of a subscription. This is inconvenient for you as a job seeker because
-1. Your resume changes over time
-2. You need a way to manage multiple resumes to maximize their odds of standing out amoungst hundreds of applicants. i.e, you need a way *modularize* different skillsets to showcase for different positions
-3. Sometimes downloading a file isn't the most convenient form. A lot of networking is done informally via links. Having more control over your own data isn't just better for your wallet, but helps make it easy to self host your resumes and share them (which this app is designed for)
-4. You need something free to use. You are looking for a job, not trying to spend more money
+# background
+SWE is more competitive than ever. To stand out among the masses, you need a resume that is easy to share with your network and targeted to the companies you want to work for.
+
+suppose there is a section on your resume that you use everywhere. Maybe you need to make a change. If you are tailoring your resumes, you might have dozens --or hundreds-- of different CVs. Wouldn't it be nice to have a system manage all that?
+
+this repo lets you do that. Fork it, and start making your own modules. You control everything. The best part is, you can host your pdfs on github pages and make links to every resume you publish.
+
+# setup
+
+`assets/`: this folder is a place to include .pdf documents of projects or research you have worked on. The links can be deployed through this repo on GH pages, which you can refer to in your resume
+   
+`build/`: LaTeX templates will be built here
+
+`copy_pdf.py`: this script converts the built pdf into one renamed as whatever you have on the header comment in your `templates/` dir. 
+
+`icons/`: what better way to tell the person reading your resume you are serious about their company specifically than embedding their icon in the resume directly?
 
 
-Spinning up new custom tailored resumes fast, free, and easy. With just a VScode extension, you can writeup all your experiences as LaTeX modules and then make as many templates as you want, drag and dropping modules like legos to fit the needs of the job you are applying for. The best part? It's easy to save, store, and build upon all the templates you use as you improve it.
+```
+├── modules
+│   ├── experiences
+│   ├── projects
+│   └── skills
+│       ├── backend
+│       ├── frontend
+│       ├── general
+│       ├── ml
+│       └── pm
+```
+`modules/`: the .tex files in `templates/` consume files in `modules/`. I've subdivided them into `experiences/`, `projects/` and `skills/`. You can add more
 
-## Requirements
+`pdfs`: this is where all your finalized resumes will be stored. Remember to name each one uniquely!
+
+```
+└── templates
+    ├── (General)
+    │   ├── BackEnd.tex
+    │   ├── CoverLetter.tex
+    │   ├── FrontEnd.tex
+    │   ├── FullStack.tex
+    │   ├── ML.tex
+    │   └── styling.sty
+    └── base-styling.sty
+```
+`templates/`: you can make a subdirectory for each company you are specializing a resume for. You can also have more than one resume for that company, as seen in the `(General)/` sub. Note that `base-styling.sty` will apply styling to ALL resumes, and each company should have it's own version of `styling.sty` (which applies custom colors and icons to them)
+
+## requirements
 python 3.8+
 run `brew install texlive`
 install the 'LaTeX workshop' VScode extension
 
 ## Usage
-Create resume templates and then save them. With LaTeX workshop, they are automatically compiled into PDFs
+create resume templates and then save them. With LaTeX workshop, they are automatically compiled into PDFs
 
-Deploying this through GitHub pages will allow you to refer to any of the PDFs in the ./build directory as a link, so anyone you want to share a tailored resume with can see it!
+deploying a fork of this repo through GitHub pages will allow you to refer to any of the PDFs in the `pdf/` directory as a link, so anyone you want to share a tailored resume with can see it!
 
-# Resume tips:
-Follow the form
+# resume tips:
+for experience and skills module, it's good to follow the form:
 1. Accomplished X
 2. Measured by Y
 3. By doing Z
 
-## Claude/GPT/DeepSeek Prompt for generating recommendations
-The following is a job description for a position I am applying to:
-```md
-
-```
-Please generate:
-1. a few ideas for what would generally be effective on a resume for this job
-2. concise list of key college courses in my education section
-3. list of 15 MAX key technical skills (like languages, frameworks, etc. but do not categorize them) in my skills section
-4. list of 10 MAX key conceptual skills (like paradigms, types of work for this tech role, etc.) in my skills section 
-5. concise list of projects to highlight in my projects section
-
-## Useful resources
+there is plenty of advice online on making better technical resumes. I endorse the following:
 - https://www.reddit.com/r/EngineeringResumes/wiki/index/?share_id=JPpfQ581Ep7v7Hk6Gl3pd&utm_content=1&utm_medium=ios_app&utm_name=ioscss&utm_source=share&utm_term=1#wiki_disclaimer.3A_your_submission_will_get_taken_down_if_you_do_not_read_this_wiki.
 - https://thetechresume.com/samples/ats-myths-busted
-
-## Crafting experiences section:
-Each bullet point should follow STAR, XYZ, or CAR
-STAR: Situation, Task, Action, and Results
-
-https://www.levels.fyi/blog/applying-star-method-resumes.html
-https://resumegenius.com/blog/resume-help/star-method-resume
-XYZ: Accomplished [X] as measured by [Y], by doing [Z]
-
-https://www.inc.com/bill-murphy-jr/google-recruiters-say-these-5-resume-tips-including-x-y-z-formula-will-improve-your-odds-of-getting-hired-at-google.html
-https://elevenrecruiting.com/create-an-effective-resume-xyz-resume-format/
-CAR: Challenge Action Result
-
-https://ca.indeed.com/career-advice/resumes-cover-letters/challenge-action-result-resume
-https://www.topresume.com/career-advice/how-to-get-more-results-with-a-car-resume
-
-If you're able to quantify your achievements/results, move the metrics towards the start of each bullet
+- https://www.levels.fyi/blog/applying-star-method-resumes.html
+- https://resumegenius.com/blog/resume-help/star-method-resume
+- https://www.inc.com/bill-murphy-jr/google-recruiters-say-these-5-resume-tips-including-x-y-z-formula-will-improve-your-odds-of-getting-hired-at-google.html
+- https://elevenrecruiting.com/create-an-effective-resume-xyz-resume-format/
+- https://ca.indeed.com/career-advice/resumes-cover-letters/challenge-action-result-resume
+- https://www.topresume.com/career-advice/how-to-get-more-results-with-a-car-resume
 
 ## Cover letters
-Cover letters aren't a supported feature, but you want them since you are already invseting time into a targeted approach. 
+some companies ask for cover letters. Since they aren't usually necessary, there is only one template for them. If you do feel like it's good to make one, you can save a lot of time copy/pasting your resume into a LLM with the following prompt
 
-I like to prompt an LLM with my resume and the job description, requesting it to write a cover letter. it goes something like this:
 ```
 Here is my resume:
 Here is my job:
