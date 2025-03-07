@@ -1,8 +1,8 @@
 # tutorial
-TODO: post link here
+https://www.linkedin.com/posts/jkru3_swe-is-more-competitive-than-ever-to-stand-activity-7303839488642859008-zxOz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB7uMq4Bg5eKFlzETKS-OVhLvmaJK48qNY4
 
 # background
-SWE is more competitive than ever. To stand out among the masses, you need a resume that is easy to share with your network and targeted to the companies you want to work for.
+SWE is more competitive than ever. To stand out, you need a resume that is easy to share with your network and targeted to the companies you want to work for.
 
 suppose there is a section on your resume that you use everywhere. Maybe you need to make a change. If you are tailoring your resumes, you might have dozens --or hundreds-- of different CVs. Wouldn't it be nice to have a system manage all that?
 
