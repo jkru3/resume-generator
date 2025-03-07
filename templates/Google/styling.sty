@@ -1,5 +1,6 @@
+% styling_extension.sty
 %----------------------------------------------------------------------------------------
-%	PACKAGES AND SETUP
+% PACKAGES AND SETUP
 %----------------------------------------------------------------------------------------
 \ProvidesPackage{styling}
 \usepackage{../base-styling} % inherits all the styling (commands and colors) from base.sty
@@ -7,21 +8,21 @@
 %----------------------------------------------------------------------------------------
 %	DEFINE BASE COLORS
 %----------------------------------------------------------------------------------------
-\colorlet{secondarycolor}{microsoft-blue} % we set the company icon as the secondarycolor
+\colorlet{secondarycolor}{google-blue} % we set the company icon as the secondarycolor
 % since most company colors are light, so we darken it a bit to get the primarycolor
 \colorlet{primarycolor}{black!33!secondarycolor}
 
 %----------------------------------------------------------------------------------------
 %	SET HEADER
 %----------------------------------------------------------------------------------------
-\newcommand{\companyicon}{../../icons/microsoft.png} % path to the company icon
-\newcommand{\iconsize}{2em} % change this to make the icon bigger
-\newcommand{\headerboxraise}{0.5em} % change this to move the header up or down
+\newcommand{\companyicon}{../../icons/google.png} % path to the company icon
+\newcommand{\iconsize}{1.5em} % change this to make the icon bigger
+\newcommand{\headerboxraise}{0.3em} % change this to move the header up or down
 
 %----------------------------------------------------------------------------------------
 %	ADD BORDER COLORING
 %----------------------------------------------------------------------------------------
-\colorlet{bordercolor1}{microsoft-red} % top-left quadrant color
-\colorlet{bordercolor2}{microsoft-green} % top-right quadrant color
-\colorlet{bordercolor3}{microsoft-blue} % bottom-left quadrant color
-\colorlet{bordercolor4}{microsoft-yellow} % bottom-right quadrant color
+\colorlet{bordercolor1}{google-blue} % top-left quadrant color
+\colorlet{bordercolor2}{google-red} % top-right quadrant color
+\colorlet{bordercolor3}{google-green} % bottom-left quadrant color
+\colorlet{bordercolor4}{google-yellow} % bottom-right quadrant color
